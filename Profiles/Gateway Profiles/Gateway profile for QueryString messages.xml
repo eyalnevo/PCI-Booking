@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- The request definition tells the gateway which messages to search for - based on the filter specified. Messages that do not match
+     the specific filter will be ignored and will pass through as-is. For messages that do match the filter, the gateway will apply
+     the content filter to read the card details from the message body. Optionally, a replace filter can be added as well to indicate
+     to the gateway that a token replacement must occur in the response sent back through the gateway. -->
+<requestsDefinition type="xml" id="Unique_ID_for_this_message_filter" description="Plain text description of the filter">
+  <!-- This message filter is looking for all HTTP POST messages with a header called "SOAPAction" and one of the listed values.
+       The gateway can be set to search for either POST or GET methods and look for either a specific header or a specific URL path. -->
+  <filter type="httpHeader" method="POST">
+    <value name="SOAPAction">&quot;value1&quot;,value2,&quot;value3&quot;,value4</value>
+  </filter>
+  <!-- The content selector tells the gateway where the card details are located within the XML message of the request. 
+       In order to overcome the use of namespace within XML elements, we recommend using * (asterisks) or “*[local-name()=’ElementName’]” 
+       instead of the name itself. An asterisk is used to designate one level down - regardless of the name of the element. 
+       This example is based on an XML message where the card data is located in the 4th level of the XML under the element called “BankCard”.
+       -->
+  <content selector="/*/*/*/*[local-name()=’bankCard’]">
+    <!-- The card number is listed in a sub element called “num” -->
+    <number selector="*[local-name()=’num’]" />
+    <!-- The expiration date - both month and year - is listed in one field, the “expiration” field. In this example, 
+         the format of the expiration date is YYYYMM. In order to spilt the two components, you will need to use the substring command.
+         The substring command has two parameters - the starting point (which is required) and the length (which is optional). 
+         The starting character is 0 based. -->
+    <expYear selector="*[local-name()=’expiration’]" substring="0,4" format="YYYY"></expYear> <!-- format options are "YY" and "YYYY"-->
+    <expMonth selector="*[local-name()=’expiration’]" substring="5" format="MM"></expMonth> <!-- format options are "M" and "MM"-->
+    <!-- In this example, the name on the card is listed in a sub-element of BankCard called “cardHolderName”.
+         This is why we add another * (asterisks) to the element in order to go down a level. -->
+    <nameOnCard selector="*/*[local-name()=’cardHolderName’]"></nameOnCard>
+    <!-- The CVV is listed as an attribute (property) of the BankCard element -->
+    <securityCode selector="/@cvv"/>
+    <!-- In our example, the message does not contain a value for the issue number and so we will use a dummy field. -->
+    <issueNumber selector="issue_number]"></issueNumber>
+    <!-- In this example, the card type is listed as an attribute (property) of the BankCard element and the card type is also listed
+         in shorthand form. I.e. "MC" = Master Card, "VI" = Visa, etc. This example will show how to create the mapping from the 
+         built-in PCI Booking credit card type names and the shorthand card types listed in the message. -->
+    <type selector="/@CardCode">
+      <MasterCard>MC</MasterCard>
+      <Visa>VI</Visa>
+      <AMEX>AX</AMEX>
+      <DinersClub>DC</DinersClub>
+      <JCB>JC</JCB>
+      <UnionPay>UP</UnionPay>
+      <Discover>DS</Discover>
+      <!-- You will need to add all of the cards that are possible to receive from this third party.
+           If you do not provide a mapping of the card type name, and the name processed will not match those in the PCI Booking system,
+           then the card token will have a type = "unspecified". -->
+    </type>
+  </content>
+  <!-- The replace selector tells the gateway where the card details are to be located in the XML message of the response. 
+       In order to overcome the use of namespace within XML elements, we recommend using * (asterisks) or “*[local-name()=’ElementName’]” 
+       instead of the name itself. An asterisk is used to designate one level down - regardless of the name of the element. 
+       This example is based on an XML message where the card data is located in the 4th level of the XML under the element called “BankCard”.
+       -->
+  <replace selector="/*/*/*/*[local-name()=’bankCard’]">
+    <!-- The card number is listed in a sub element called “num” -->
+    <number selector="*[local-name()=’num’]" />
+    <!-- The expiration date - both month and year - is listed in one field, the “expiration” field. In this example, 
+         the format of the expiration date is YYYYMM. In order to spilt the two components, you will need to use the substring command.
+         The substring command has two parameters - the starting point (which is required) and the length (which is optional). 
+         The starting character is 0 based. -->
+    <expYear selector="*[local-name()=’expiration’]" substring="0,4" format="YYYY"></expYear> <!-- format options are "YY" and "YYYY"-->
+    <expMonth selector="*[local-name()=’expiration’]" substring="5" format="MM"></expMonth> <!-- format options are "M" and "MM"-->
+    <!-- In this example, the name on the card is listed in a sub-element of BankCard called “cardHolderName”.
+         This is why we add another * (asterisks) to the element in order to go down a level. -->
+    <nameOnCard selector="*/*[local-name()=’cardHolderName’]"></nameOnCard>
+    <!-- The CVV is listed as an attribute (property) of the BankCard element -->
+    <securityCode selector="/@cvv"/>
+    <!-- In our example, the message does not contain a value for the issue number and so we will use a dummy field. -->
+    <issueNumber selector="issue_number]"></issueNumber>
+    <!-- In this example, the card type is listed as an attribute (property) of the BankCard element and the card type is also listed
+         in shorthand form. I.e. "MC" = Master Card, "VI" = Visa, etc. This example will show how to create the mapping from the 
+         built-in PCI Booking credit card type names and the shorthand card types listed in the message. -->
+    <type selector="/@CardCode">
+      <MasterCard>MC</MasterCard>
+      <Visa>VI</Visa>
+      <AMEX>AX</AMEX>
+      <DinersClub>DC</DinersClub>
+      <JCB>JC</JCB>
+      <UnionPay>UP</UnionPay>
+      <Discover>DS</Discover>
+    </type>
+  </replace>
+</requestsDefinition>
