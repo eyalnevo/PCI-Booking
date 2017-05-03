@@ -1,0 +1,26 @@
+{
+  "@schemaVersion": "1.0",
+  "BankCard": {
+    "Type": "Visa",
+    "Virtual": {
+      "@isMultiuse": "false",
+      "@currency": "AUD",
+      "@maxAmount": "500",
+      "@cardRules": "Chapter 11",
+      "@validFromMonth": "08",
+      "@validFromDay": "31",
+      "@validFromYear": "2014",
+      "@validToMonth": "11",
+      "@validToDay": "1",
+      "@validToYear": "2017"
+    },
+    "Number": "4580458045804580",
+    "NameOnCard": "MR Y. ALON",
+    "ExpirationDate": {
+      "Month": "04",
+      "Year": "2019"
+    },
+    "IssueNumber": "2",
+    "CVV": "306"
+  }
+}

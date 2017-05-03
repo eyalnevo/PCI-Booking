@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BankCardDetails xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
+  <BankCard>
+    <Type>Visa</Type>
+    <Virtual isMultiuse="false" currency="AUD" maxAmount="500" cardRules="Chapter 11" validFromMonth="08" validFromDay="31" validFromYear="2014" validToMonth="11" validToDay="1" validToYear="2017"/>
+    <Number>4580458045804580</Number>
+    <NameOnCard>MR Y. ALON</NameOnCard>
+    <ExpirationDate>
+      <Month>04</Month>
+      <Year>2019</Year>
+    </ExpirationDate>
+    <IssueNumber>2</IssueNumber>
+    <CVV>306</CVV>
+  </BankCard>
+</BankCardDetails>
