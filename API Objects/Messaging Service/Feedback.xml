@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<HotelReservationFeedback xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
+  <BookerReservationID>test</BookerReservationID>
+  <HotelReservationID>0987</HotelReservationID>
+  <Feedback>false</Feedback>
+  <Reason>no vacancies</Reason>
+</HotelReservationFeedback>

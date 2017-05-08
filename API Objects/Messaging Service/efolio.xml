@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<eFolio xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
+  <BookerReservationID>test</BookerReservationID>
+  <HotelReservationID>0987</HotelReservationID>
+  <Invoice contentType="application/pdf" number="123456-78">
+    <Content>dGVzdDoxMjM=</Content>
+  </Invoice>
+</eFolio>

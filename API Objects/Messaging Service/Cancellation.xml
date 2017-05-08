@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<HotelReservationCancellation xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
+  <BookerName>test</BookerName>
+  <BookerReservationID>hfgfyt6-0998jh</BookerReservationID>
+  <HotelReservationID>owufhwhewiuhf</HotelReservationID>
+  <Reason>I have changed my mind</Reason>
+</HotelReservationCancellation> 

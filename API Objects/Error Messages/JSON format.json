@@ -1,0 +1,8 @@
+{
+
+  "code": -112,
+  "message": "Destination is bad",
+
+  "moreInfo": "Bad or missing custom header X-pciBooking-Destination"
+
+}
