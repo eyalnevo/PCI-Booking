@@ -1,0 +1,36 @@
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <form method="post" id="frm" onSubmit="sbtFrm();return false;" action="">
+        <iframe id="ifrm" src="https://service.pcibooking.net/api/payments/capturecard?sessionToken=sessionToken&accessToken=accessToken&brand=brand&language=language&css=css&cvv=cvv&removeBaseCss=removeBaseCss&minExpiration=minExpiration&autoDetectCardType=autoDetectCardType&defaultCardType=defaultCardType&success=success&failure=failure&showOwnerId=showOwnerId&cardTypes=cardTypes&submitWithPostMessage=True" width="800" height="300"></iframe><br><input type="submit" id="btn">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script type="text/javascript">
+        var receiver = document.getElementById('ifrm').contentWindow;
+
+        function sbtFrm() {
+            receiver.postMessage('validate', "https://service.pcibooking.net");
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener('message', handleValidateMessageFromPciBooking);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent('onmessage', handleValidateMessageFromPciBooking);
+        }
+
+        function handleValidateMessageFromPciBooking(e) {
+            console.log('====' + e.data);
+            if (e.origin.toLowerCase() === "https://service.pcibooking.net") {
+                if (e.data == 'valid') {
+                    // form is valid - only here do the submit with postMessage
+                    receiver.postMessage('submit', "https://service.pcibooking.net");
+                } else {
+                    console.log('not valid');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
