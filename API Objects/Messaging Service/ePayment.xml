@@ -1,14 +1,14 @@
 <ePayment xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
-<References>
-<PayerName>volkswagen</PayerName>
-<PayerReference>volk</PayerReference>
-<PayerOrderId>1234V</PayerOrderId>
-<PayeeReference>invoice4578</PayeeReference>
-</References>
-<Description>General text to describe the payment</Description>
-<PaymentURI>
-https://service.pcibooking.net/api/payments/bankcard/3f799651f5464bd79d7806dba13e2060
-</PaymentURI>
-<Currency>USD</Currency>
-<Amount>123.45</Amount>
+  <References>
+    <PayerName>volkswagen</PayerName>
+    <PayerReference>volk</PayerReference>
+    <PayerOrderId>1234V</PayerOrderId>
+    <PayeeReference>invoice4578</PayeeReference>
+  </References>
+  <Description>General text to describe the payment</Description>
+  <PaymentURI>
+    https://service.pcibooking.net/api/payments/bankcard/3f799651f5464bd79d7806dba13e2060
+  </PaymentURI>
+  <Currency>USD</Currency>
+  <Amount>123.45</Amount>
 </ePayment>

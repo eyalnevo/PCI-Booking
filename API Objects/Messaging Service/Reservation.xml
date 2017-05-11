@@ -49,12 +49,13 @@
     </Address>
   </GuestDetails>
   <Payments>
-    <Payment>      <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
+    <Payment>
+      <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
       <Currency>USD</Currency>
       <Amount>123.45</Amount>
     </Payment>
     <Payment>
-     <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
+      <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
       <Currency>USD</Currency>
       <Amount>123.45</Amount>
     </Payment>

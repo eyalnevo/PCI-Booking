@@ -2,64 +2,65 @@
 <HotelReservationModification xmlns="http://www.pcibooking.net/reservation" schemaVersion="1.0">
   <HotelReservationID>hotelresID</HotelReservationID>
   <HotelReservation schemaVersion="1.0">
-  <References>
-    <BookerName>Hotel finder</BookerName>
-    <BookerReference>the booker ref.</BookerReference>
-    <BookerReservationID>RES1234</BookerReservationID>
-  </References>
-  <BookerComment>This is my Booker's comment</BookerComment>
-  <Price currency="USD" amountBeforeTax="234.50" amountAfterTax="258.85" commission="12.5" amountPaidUponBooking="1.0" />
-  <Rooms>
-    <Room>
-      <ArrivalDate>2015-04-21</ArrivalDate>
-      <DepartureDate>2015-04-25</DepartureDate>
-      <RoomType>KS</RoomType>
-      <NumberOfAdults>2</NumberOfAdults>
-      <Children number="2">
-        <Child age="4"/>
-        <Child age="7"/>
-      </Children>
-      <SmokingPreference>false</SmokingPreference>
-      <Comments>High floor please</Comments>
-      <Price amountBeforeTax="234.50" amountAfterTax="258.85" ratePlan="PLAN2"/>
-    </Room>
-    <Room>
-      <ArrivalDate>2015-04-21</ArrivalDate>
-      <DepartureDate>2015-04-25</DepartureDate>
-      <RoomType>KS</RoomType>
-      <NumberOfAdults>2</NumberOfAdults>
-      <Children number="2">
-        <Child age="4"/>
-        <Child age="7"/>
-      </Children>
-      <SmokingPreference>false</SmokingPreference>
-      <Comments>Late arrival</Comments>
-      <Price amountBeforeTax="264.50" amountAfterTax="268.85" ratePlan="PLAN2"/>
-    </Room>
-  </Rooms>
-  <GuestDetails>
-    <FirstName>John</FirstName>
-    <LastName>Smith</LastName>
-    <Email>js@hisdomain.com</Email>
-    <Phone>+97238765432</Phone>
-    <Address>
-      <Address1>5070 Main Rd.</Address1>
-      <City>Boston</City>
-      <StateProvince>MA</StateProvince>
-      <CountryCode>US</CountryCode>
-      <PostalCode>90416</PostalCode>
-    </Address>
-  </GuestDetails>
-  <Payments>
-    <Payment>      <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
-      <Currency>USD</Currency>
-      <Amount>123.45</Amount>
-    </Payment>
-    <Payment>
-     <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
-      <Currency>USD</Currency>
-      <Amount>123.45</Amount>
-    </Payment>
-  </Payments>
+    <References>
+      <BookerName>Hotel finder</BookerName>
+      <BookerReference>the booker ref.</BookerReference>
+      <BookerReservationID>RES1234</BookerReservationID>
+    </References>
+    <BookerComment>This is my Booker's comment</BookerComment>
+    <Price currency="USD" amountBeforeTax="234.50" amountAfterTax="258.85" commission="12.5" amountPaidUponBooking="1.0" />
+    <Rooms>
+      <Room>
+        <ArrivalDate>2015-04-21</ArrivalDate>
+        <DepartureDate>2015-04-25</DepartureDate>
+        <RoomType>KS</RoomType>
+        <NumberOfAdults>2</NumberOfAdults>
+        <Children number="2">
+          <Child age="4"/>
+          <Child age="7"/>
+        </Children>
+        <SmokingPreference>false</SmokingPreference>
+        <Comments>High floor please</Comments>
+        <Price amountBeforeTax="234.50" amountAfterTax="258.85" ratePlan="PLAN2"/>
+      </Room>
+      <Room>
+        <ArrivalDate>2015-04-21</ArrivalDate>
+        <DepartureDate>2015-04-25</DepartureDate>
+        <RoomType>KS</RoomType>
+        <NumberOfAdults>2</NumberOfAdults>
+        <Children number="2">
+          <Child age="4"/>
+          <Child age="7"/>
+        </Children>
+        <SmokingPreference>false</SmokingPreference>
+        <Comments>Late arrival</Comments>
+        <Price amountBeforeTax="264.50" amountAfterTax="268.85" ratePlan="PLAN2"/>
+      </Room>
+    </Rooms>
+    <GuestDetails>
+      <FirstName>John</FirstName>
+      <LastName>Smith</LastName>
+      <Email>js@hisdomain.com</Email>
+      <Phone>+97238765432</Phone>
+      <Address>
+        <Address1>5070 Main Rd.</Address1>
+        <City>Boston</City>
+        <StateProvince>MA</StateProvince>
+        <CountryCode>US</CountryCode>
+        <PostalCode>90416</PostalCode>
+      </Address>
+    </GuestDetails>
+    <Payments>
+      <Payment>
+        <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
+        <Currency>USD</Currency>
+        <Amount>123.45</Amount>
+      </Payment>
+      <Payment>
+        <PaymentURI>https://localhost:51234/api/payments/bankcard/586e130dbacf484f8d76f74d6fe04cae</PaymentURI>
+        <Currency>USD</Currency>
+        <Amount>123.45</Amount>
+      </Payment>
+    </Payments>
   </HotelReservation>
 </HotelReservationModification>
